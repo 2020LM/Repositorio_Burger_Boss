@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head >
+  <link rel="icon" href="https://images.vexels.com/media/users/3/143047/isolated/preview/b0c9678466af11dd45a62163bdcf03fe-icono-plano-de-hamburguesa-de-comida-rapida.png">
+    <meta charset="UTF-8">
+    <title>BurgerBoss</title>
+    {% load static%}
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <style >
+        body {
+          background-color:#d979048f;
+  background-image: url(/static/semillas.png);
+  background-repeat: repeat;
+}
+h1 {
+  font: oblique bold 420% cursive;
+}
+h2 {
+  font:  bold 200% cursive;
+}
+h4 {
+  font:  bold 100% cursive;
+}
+    </style>
+       
+
+    <nav class="navbar navbar-light bg-light fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand"  href="{% url 'homepage3'%}" style="font-family: Arial,Helvetica Neue,Helvetica,sans-serif; ">BurgerBoss</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel"></h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'homepage3'%}">Menu</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'registro'%}">Crear pedido</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'pedido2_completado_con_pago'%}">Pedidos completados</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'ubicanos'%}">Contacto</a>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+      </div>
+    </nav>
+    <br />
+    <br />
+    <br />
+    <style>
+    .map-container-6{
+      overflow:hidden;
+      padding-bottom:56.25%;
+      position:relative;
+      height:0;
+                    }
+    .map-container-6 iframe{
+      left:0;
+      top:0;
+      height:100%;
+      width:100%;
+      position:absolute;
+      }
+    </style>
+    <!--Google map-->
+<!--Section: Contact v.1-->
+<section class="section pb-5">
+
+  <!--Section heading-->
+  <h2 class="section-heading h1 pt-4">Contactanos</h2>
+  <!--Section description-->
+  <p class="section-description pb-4">Nos puedes contactar y localizar en</p>
+
+  <div class="row">
+
+    <!--Grid column-->
+    <div class="col-lg-5 mb-4">
+
+      <!--Form with header-->
+      <div class="card">
+
+        <div class="card-body">
+          <!--Header-->
+          <div class="form-header blue accent-1">
+            <h2><i class="fas fa-envelope"></i> Escribenos cualquier duda:</h2>
+          </div>
+
+          <p>Responderemos lo mas rapido posible</p>
+          <br>
+
+          <!--Body-->
+          <div class="md-form">
+            <label for="form-name">Telefono</label>
+            <i class="fas fa-user prefix grey-text"></i>
+            <input type="text" id="form-name" class="form-control">
+            <label for="form-name">Tu nombre</label>
+          </div>
+
+          <div class="md-form">
+            <i class="fas fa-envelope prefix grey-text"></i>
+            <input type="text" id="form-email" class="form-control">
+            <label for="form-email">Tu email</label>
+          </div>
+
+          <div class="md-form">
+            <i class="fas fa-tag prefix grey-text"></i>
+            <input type="text" id="form-Subject" class="form-control">
+            <label for="form-Subject">Motivo</label>
+          </div>
+
+          <div class="md-form">
+            <i class="fas fa-pencil-alt prefix grey-text"></i>
+            <textarea id="form-text" class="form-control md-textarea" rows="3"></textarea>
+            <label for="form-text"></label>
+          </div>
+
+          <div class="text-center mt-4">
+            <button type=Submit class="btn btn-light-blue" onclick="alert('gracias por contactarte con nosotros :)')"><a href="{% url 'homepage3'%}">enviar</a></button>
+            <button type=Submit class="btn btn-light-blue" href="{% url 'homepage3'%}"><a href="{% url 'homepage3'%}">Salir</a></button>
+          </div>
+
+
+
+        </div>
+
+      </div>
+      <!--Form with header-->
+
+    </div>
+    <!--Grid column-->
+
+    <!--Grid column-->
+    <div class="col-lg-7">
+
+      <!--Google map-->
+      <div id="map-container-google-11" class="z-depth-1-half map-container-6" style="height: 80% ; width:80% ;left: 10%;">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7846.440566549833!2d-66.8175129761309!3d10.4832935107471!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8c2a576d54142307%3A0x346aa4e5e126367e!2sUniversidad%20Metropolitana%20de%20Caracas!5e0!3m2!1ses!2sve!4v1635994068574!5m2!1ses!2sve" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>"
+          frameborder="0" style="border:0" allowfullscreen></https:>
+      </div>
+
+      <br>
+      <!--Buttons-->
+      <div class="row text-center">
+        <div class="col-md-4">
+          <a class="btn-floating blue accent-1"><i class="fas fa-map-marker-alt"></i></a>
+          <h4><p>BurgerBoss,Universidad Metropolitana de Caracas</p></h4>
+          <h4><p>Caracas,Venezuela</p></h4>
+        </div>
+
+        <div class="col-md-4">
+          <a class="btn-floating blue accent-1"><i class="fas fa-phone"></i></a>
+          <h4><p>(0212)XXXXXXXXX</p></h4>
+          <h4><p>Lun - Vier, 8:00 AM-10:00 PM</p></h4>
+        </div>
+
+        <div class="col-md-4">
+          <a class="btn-floating blue accent-1"><i class="fas fa-envelope"></i></a>
+          <h4><p>BurgerBoss@gmail.com</p></h4>
+          <h4><p>VentasBurgerBoss@gmail.com</p></h4>
+        </div>
+      </div>
+
+    </div>
+    <!--Grid column-->
+
+  </div>
+
+</section>
+<!--Section: Contact v.1-->
+<br />
+    <br />
+
+<footer class="bg-dark text-center text-white" style="
+  bottom: 0%;
+  position: static;
+  width: 100%;
+">
+  <!-- Grid container -->
+  
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2021 Copyright:
+    <a class="text-white" href="https://BurgerBoss.com/">BurgerBoss.com</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+
+
+</head>

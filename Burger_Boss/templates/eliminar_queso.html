@@ -1,0 +1,14 @@
+{%extends 'pedido.html'%}
+{%block titulo%}Eliminar carne{%endblock titulo%}
+{%block cuerpo%}
+
+
+<form method = "post">
+    {%csrf_token%}
+<h2>¿Desea eliminar el queso {{object.nombre}}?</h2>
+<button type = "submit" name = "button">Confirmar</button>
+<button><a href="{% url 'pedido_admin'%}">Cancelar</a></button>
+</form>
+
+
+{%endblock cuerpo%}

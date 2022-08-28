@@ -1,0 +1,83 @@
+{%extends 'pedido.html'%}
+{%block titulo%}Pedido Completado{%endblock titulo%}
+{%block cuerpo%}
+<style>
+
+  
+.myButton {
+  background-color:#d97904d3;
+	/*background: linear-gradient(to bottom,
+  #BF5B04 20%,rgb(255, 70, 14) 20% 30%, rgb(255, 187, 0) 30% 50%, #565902 50% 60%,#732002 60% 80%, #BF5B04  20%);*/
+	border-radius:28px;
+	border:1px solid #732002;
+	display:inline-block;
+	cursor:pointer;
+	color:whitesmoke;
+	font-family:Arial;
+	font-size:14px;
+	padding:7px 20px;
+	text-decoration:none;
+  text-shadow: 1px  0px 0px black,
+               0px  1px 0px black,
+              -1px  0px 0px black,
+               0px -1px 0px black;
+  
+}
+.myButton:hover {
+  color:whitesmoke;
+	background-color:#565902;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+  bottom: 2px;
+}
+</style>
+</br>
+</br>
+</br>
+   <nav class="navbar navbar-light bg-light fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand"  href="{% url 'homepage3'%}" >BurgerBoss</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel"></h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'homepage3'%}">Menu</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'registro'%}">Crear pedido</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'pedido2_completado_con_pago'%}">Pedidos completados</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'ubicanos'%}">Contacto</a>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+      </div>
+    </nav>
+<font color="lightyellow">
+<h2>Pedido Registrado</h2>
+<h3>El pedido fue registrado con éxito. Puede ver la información de su pedido acá</h3>
+
+
+   <a href="{% url 'pedido2_completado'%}" class="myButton">Ver pedido</a>
+
+
+
+</font>
+{%endblock cuerpo%}
+
+

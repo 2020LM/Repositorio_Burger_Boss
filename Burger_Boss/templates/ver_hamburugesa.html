@@ -1,0 +1,74 @@
+{%extends 'pedido.html'%}
+{%block titulo%}Hamburguesas Creadas{%endblock titulo%}
+{% block cuerpo %}
+</br>
+</br>
+</br>
+   <nav class="navbar navbar-light bg-light fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">BurgerBoss</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel"></h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'homepage3'%}">Menu</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'registro'%}">Crear pedido</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'pedido2_completado_con_pago'%}">Pedidos completados</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'ubicanos'%}">Contacto</a>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+      </div>
+    </nav>
+
+<font color="lightyellow">
+<h2>Hamburguesas Creadas</h2>
+<h4>Estas son las hamburguesas que se han creado</h4>
+<table border = 2>
+
+<thead>
+<tr>
+    <th>Tipo de pan</th>
+    <th>Carne</th>
+    <th>Queso</th>
+    <th>Ingrediente</th>
+
+</tr>
+</thead>
+<tbody>
+    {% for hamburguesa in object_list%}
+    <tr>
+        <td>{{hamburguesa.pan}}</td>
+        <td>{{hamburguesa.carne}}</td>
+        <td>{{hamburguesa.queso}}</td>
+    </tr>
+
+</tbody>
+     {% endfor %}
+</table>
+</br>
+</br>
+<button><td><a href="{% url 'name='crear_hamburguesa2'%}" >Volver a la sección de crear hamburguesas</a></td></button>
+<button><td><a href="{% url 'index3'%}" >Cancelar Pedido</a></td></button>
+{% endblock cuerpo %}
+
+
+
+</font>
+

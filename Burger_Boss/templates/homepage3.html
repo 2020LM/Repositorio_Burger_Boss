@@ -1,0 +1,246 @@
+<!DOCTYPE html>  
+<html lang="en">  
+<head >  
+  <link rel="icon" href="https://images.vexels.com/media/users/3/143047/isolated/preview/b0c9678466af11dd45a62163bdcf03fe-icono-plano-de-hamburguesa-de-comida-rapida.png">
+  <meta charset="UTF-8">  
+  <title>BurgerBoss</title>  
+  {% load static%} 
+  <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">  
+  <script src="{% static 'js/bootstrap.min.js' %}"></script> 
+  <body style="background-color:#d97904d3;">
+  <style Type="text/css">
+
+      .carousel-inner img{
+        position: relative;
+        
+        
+        height: 30rem;
+        
+        margin-top:5rem ;
+        margin-bottom: 4rem;
+        
+        color:black;
+        border-radius: 20px;
+       /* left:50px;
+    right:50px;*/
+      }
+      body { /* background-image:linear-gradient(0deg, #d97904d3, #d97904d3);*/
+        overflow-x: hidden;
+  /*background-color: #BF5B04;*/
+
+}
+    h1{
+      font:  bold 200% cursive;
+      text-shadow: 1px  0px 0px black,
+               0px  1px 0px black,
+              -1px  0px 0px black,
+               0px -1px 0px black;
+    }
+      
+      
+    </style>
+
+    
+    <nav class="navbar navbar-light bg-light fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#" style="font-family: Arial,Helvetica Neue,Helvetica,sans-serif; ">BurgerBoss </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel"></h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'homepage3'%}">Menu</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'registro'%}">Crear pedido</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'pedido2_completado_con_pago'%}">Pedidos completados</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'ubicanos'%}">Contacto</a>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    
+    
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+      
+      <div class="carousel-indicators" >
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-item">
+          <img src="{%static '/slider2.jpg'%}" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+          </div>
+        </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="https://mandolina.co/wp-content/uploads/2021/03/610747100-1.jpg" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            <h1 style="color:rgb(255, 255, 255);position:static ;font-size: 50px; ">BurgerBoss </h1>
+              <h2 style="color:transparent;position:static ;"> <b>.</b></h2>
+              <h2 style="color:transparent;position:static ;"> <b>.</b></h2>
+              <h2 style="color:transparent;position:static ;"> <b>.</b></h2>
+              <h2 style="color:transparent;position:static ;"> <b>.</b></h2>
+            
+
+            <p>
+
+            </p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="https://d1uz88p17r663j.cloudfront.net/resized/aceeff63a967225788369fc9b53d8c96_bur_1200_600.png" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+            
+            <h1 style="color:rgb(255, 255, 255);position:static ; ">Crea tus propias hamburguesas </h1>
+              <h2 style="color:transparent;position:static ;"> <b>.</b></h2>
+
+            <p>
+
+            </p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="{%static '/slider3.jpg'%}" class="d-block w-100" alt="...">
+          <div class="carousel-caption d-none d-md-block">
+              
+              <h1 style="color:rgb(255, 255, 255);position:static ;">Con ingredientes frescos </h1>
+              <h1 style="color:rgb(255, 255, 255);position:static ;">Sanitas </h1>
+              <h2 style="color:transparent;position:static ;">. </h2>
+            <p>
+
+            </p>
+            
+            
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <style>
+      body{
+        background-color:linear-gradient(0deg, #d97904d3, #f18909fa);
+        background-image: url(/static/fondomenu.png);
+        background-repeat: repeat;
+        /*overflow-y: hidden;*/
+        
+    /*background-image: linear-gradient(120deg, #eee5e4, #d3d2d2)*/
+  }
+    
+
+    .row {
+    color: rgb(255, 255, 255);
+    position: relative;
+    height: auto;
+    width: 90%;
+    background:whitesmoke;
+    border-radius: 50px;
+    
+    margin-left: auto; margin-right: auto;
+    bottom:20px;
+    backdrop-filter: blur(50px);
+        background-color: rgba(255,255,255,.2);
+        border-radius: 3em;
+        border: 2px solid rgba(255,255,255,.1);
+        background-clip: padding-box;
+        box-shadow: 10px 10px 10px rgba(46, 54, 68, 0.03);
+        
+        text-align:center;
+        
+        
+        }
+.col-lgl-4 {
+  position: absolute;
+    display:inline-block; 
+    margin:0 15px; 
+}
+    </style>
+    <div class="row" >
+      
+
+      <div class="col-lg-4 " >
+        <img src="https://cdn-icons-png.flaticon.com/512/1147/1147828.png" class="rounded-circle" alt="Cinque Terre" width="140" height="140"  border-radius: 50px;  >
+        
+        
+        <h2>Menu</h2>
+        <p>Ver el menu de opciones</p>
+        <p><a class="btn btn-secondary" href="{% url 'productos'%}">Ver mas &raquo;</a></p>
+      </div><!-- /.col-lg-4 -->
+      
+      <div class="col-lg-4" >
+       
+        <img src="https://images.vexels.com/media/users/3/143047/isolated/preview/b0c9678466af11dd45a62163bdcf03fe-icono-plano-de-hamburguesa-de-comida-rapida.png" class="rounded-circle" alt="Cinque Terre" width="140" height="140"  border-radius: 50px;>
+        <h2>Crear hamburguesa</h2>
+        <p>Un mundo de posibilidades</p>
+        <p><a class="btn btn-secondary" href="{% url 'registro'%}">Ver mas &raquo;</a></p>
+
+      </div><!-- /.col-lg-4 -->
+      <div class="col-lg-4">
+        <img src="https://images.vexels.com/media/users/3/131261/isolated/preview/b2e48580147ca0ed3f970f30bf8bb009-marcador-de-ubicacion-del-mapa.png" class="rounded-circle" alt="Cinque Terre" width="140" height="140"  border-radius: 50px;>
+        
+        <h2>Ubicanos</h2>
+        
+        
+
+
+        <p>Contactanos y ubicanos.</p>
+        <p><a class="btn btn-secondary" href="{% url 'ubicanos'%}">Ver mas &raquo;</a></p>
+      </div><!-- /.col-lg-4 -->
+  
+    </div><!-- /.row -->
+
+  
+</head>  
+</br>
+</br>
+</br>
+</br>
+</br>
+
+
+<footer class="bg-dark text-center text-white" style="
+  bottom: 0%;
+  position: static;
+  width: 100%;
+">
+  <!-- Grid container -->
+  <div class="container p-4 pb-0">
+    <!-- Section: Social media -->
+    
+    <!-- Section: Social media -->
+  </div>
+  <!-- Grid container -->
+
+  <!-- Copyright -->
+  <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+    © 2021 Copyright:
+    <a class="text-white" href="https://BurgerBoss.com/">BurgerBoss.com</a>
+    <p><a class="btn btn-secondary" href="{% url 'pedido_admin'%}">admin &raquo;</a></p>
+  </div>
+  <!-- Copyright -->
+</footer>
+</body> 
+

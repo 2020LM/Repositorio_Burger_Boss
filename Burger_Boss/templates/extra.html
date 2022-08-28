@@ -1,0 +1,196 @@
+{%extends 'pedido.html'%}
+{%block titulo%}Crear Pedido/Extra{%endblock titulo%}
+{%block cuerpo%}
+</br>
+</br>
+</br>
+   <nav class="navbar navbar-light bg-light fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand"  href="{% url 'homepage3'%}" style="font-family: Arial,Helvetica Neue,Helvetica,sans-serif; ">BurgerBoss</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel"></h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'homepage3'%}">Menu</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'registro'%}">Crear pedido</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'pedido2_completado_con_pago'%}">Pedidos completados</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'ubicanos'%}">Contacto</a>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+      </div>
+    </nav>
+    <style>
+
+
+      .intro {
+        height: 100%;
+      }
+      
+      @media (min-width: 550px) and (max-width: 750px) {
+        html,
+        body,
+        .intro {
+          height: 750px;
+        }
+      }
+      
+      @media (min-width: 800px) and (max-width: 850px) {
+        html,
+        body,
+        .intro {
+          height: 750px;
+        }
+      }
+      
+      .mask-custom {
+        backdrop-filter: blur(15px);
+        background-color: rgba(255,255,255,.2);
+        border-radius: 3em;
+        border: 2px solid rgba(255,255,255,.1);
+        background-clip: padding-box;
+        box-shadow: 10px 10px 10px rgba(46, 54, 68, 0.03);
+        
+      }
+      .my-4{
+        color: black;
+        font:  bold 95% cursive;
+      
+      }
+      .myButton {
+  background-color:#d97904d3;
+	/*background: linear-gradient(to bottom,
+  #BF5B04 20%,rgb(255, 70, 14) 20% 30%, rgb(255, 187, 0) 30% 50%, #565902 50% 60%,#732002 60% 80%, #BF5B04  20%);*/
+	border-radius:28px;
+	border:1px solid #732002;
+	display:inline-block;
+	cursor:pointer;
+	color:whitesmoke;
+	font-family:Arial;
+	font-size:14px;
+	padding:7px 20px;
+	text-decoration:none;
+  text-shadow: 1px  0px 0px black,
+               0px  1px 0px black,
+              -1px  0px 0px black,
+               0px -1px 0px black;
+  
+}
+.myButton:hover {
+  color:whitesmoke;
+	background-color:#565902;
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+  bottom: 2px;
+}
+      </style>
+       </br> </br>
+      <section class="intro">
+        <div class="bg-image h-100" style="background-image: url('');">
+          <div class="mask d-flex align-items-center h-100">
+            <div class="container">
+              <div class="row justify-content-center">
+                <div class="col-12 col-md-10 col-lg-7 col-xl-6">
+                  <div class="card mask-custom">
+                    <div class="card-body p-5 text-white">
+      
+                      <div class="my-4">
+                        
+                        
+    
+                        <h1>Coloca los extras para tu orden</h1>
+
+
+
+                        <form method="post">
+                            {%csrf_token%}
+                            
+                        
+                            
+                            </br>
+                         <p>Elegir la bebida</p>
+                            <select name="bebida" size = 1 required>
+                        
+                                {% for Extra in bebida %}
+                                <option value="{{Extra.nombre}}"name="bebida">{{Extra.nombre}}</option>
+                                {% endfor %}
+                            </select>
+                              </br>
+                            </br>
+                         <p>Elegir la guarnición</p>
+                            <select name="guarnicion" size =1 required>
+                        
+                                {% for Extra in guarnicion %}
+                                <option value="{{Extra.nombre}}"name="guarnicion">{{Extra.nombre}}</option>
+                                {% endfor %}
+                            </select>
+                        
+                          </br>
+                            </br>
+                         <p>Elegir el postre</p>
+                            <select name="postre" size = 1 required>
+                        
+                                {% for Extra in postre %}
+                                <option value="{{Extra.nombre}}"name="postre">{{Extra.nombre}}</option>
+                                {% endfor %}
+                            </select>
+                        
+                            </br>
+                            </br>
+                            <a href="{% url 'productos'%}" ></a>
+                            <button type="Submit" class="myButton">Realizar pedido</button>
+                        </form>
+                        
+                        </br>
+                        </br>
+                        
+                        <a href='' class="myButton">Borrar</a>
+                        <a href="{% url 'productos'%}" class="myButton">Ver los costos</a>
+                        <a href="{% url 'homepage3'%}" class="myButton">Cancelar Pedido</a>
+                         </br>
+                            </br>
+                        
+                        
+                        </font>
+                         
+                        
+      
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </br>
+  </br>
+
+</br>
+</br>
+      
+      {%endblock cuerpo%}
+      
+      
+    
+    
+   
+

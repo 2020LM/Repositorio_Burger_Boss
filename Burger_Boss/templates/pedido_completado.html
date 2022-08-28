@@ -1,0 +1,116 @@
+{%extends 'pedido.html'%}
+{%block titulo%}Pedido Completado{%endblock titulo%}
+{% block cuerpo %}
+   <nav class="navbar navbar-light bg-light fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="{% url 'homepage3'%}" style="font-family: Arial,Helvetica Neue,Helvetica,sans-serif; ">BurgerBoss </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel"></h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'homepage3'%}">Menu</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'registro'%}">Crear pedido</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'pedido2_completado_con_pago'%}">Pedidos completados</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'ubicanos'%}">Contacto</a>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+      </div>
+    </nav>
+</br>
+</br>
+</br>
+<font color="lightyellow">
+<h2>Pedido Completado</h2>
+<h4>Ubique su pedido por el número telefónico</h4>
+<h4>Le llamaremos pronto para indicar el monto total del pedido, y el método de pago</h4>
+<table border = 2>
+
+<thead>
+<tr>
+    <th>Nombre</th>
+    <th>Apellido</th>
+    <th>Teléfono</th>
+    <th>Carne</th>
+    <th>Pollo</th>
+    <th>Queso</th>
+    <th>Lechuga</th>
+    <th>Ketchup</th>
+    <th>Mostaza</th>
+    <th>Mayonesa</th>
+    <th>BBQ</th>
+    <th>Refresco_de_cola</th>
+    <th>Refresco_de_naranja</th>
+    <th>Refresco_de_limón</th>
+    <th>Papas_fritas</th>
+    <th>Aros_de_cebolla</th>
+    <th>Curly Fries</th>
+    <th>Herlado_de_vainilla</th>
+    <th>Herlado_de_chocolate</th>
+    <th>Herlado_de_fresa</th>
+    <th>Estado</th>
+
+
+
+
+
+
+
+</tr>
+</thead>
+<tbody>
+    {% for pedido in object_list%}
+    <tr>
+        <td>{{pedido.nombre}}</td>
+        <td>{{pedido.apellido}}</td>
+        <td>{{pedido.telefono}}</td>
+        <td>{{pedido.carne}}</td>
+        <td>{{pedido.pollo}}</td>
+        <td>{{pedido.queso}}</td>
+        <td>{{pedido.lechuga}}</td>
+        <td>{{pedido.ketchup}}</td>
+        <td>{{pedido.mostaza}}</td>
+        <td>{{pedido.mayonesa}}</td>
+        <td>{{pedido.BBQ}}</td>
+        <td>{{pedido.refresco_de_cola}}</td>
+        <td>{{pedido.refresco_de_naranja}}</td>
+        <td>{{pedido.refresco_de_limón}}</td>
+        <td>{{pedido.papas_fritas}}</td>
+        <td>{{pedido.aros_de_cebolla}}</td>
+        <td>{{pedido.curly_fries}}</td>
+        <td>{{pedido.helado_de_vainilla}}</td>
+        <td>{{pedido.helado_de_chocolate}}</td>
+        <td>{{pedido.helado_de_fresa}}</td>
+         <td>{{pedido.estado}}</td>
+
+
+    </tr>
+
+</tbody>
+     {% endfor %}
+</table>
+</br>
+</br>
+<button><td><a href="{% url 'pagos'%}" >Pagar pedido</a></td></button>
+{% endblock cuerpo %}
+
+
+
+</font>
+

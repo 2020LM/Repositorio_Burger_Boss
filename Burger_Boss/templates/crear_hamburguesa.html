@@ -1,0 +1,60 @@
+{%extends 'pedido.html'%}
+{%block titulo%}Crear Hamburguesa{%endblock titulo%}
+{%block cuerpo%}
+</br>
+</br>
+</br>
+   <nav class="navbar navbar-light bg-light fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand"  href="{% url 'homepage3'%}" >BurgerBoss</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasNavbarLabel"></h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'homepage3'%}">Menu</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'registro'%}">Crear pedido</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'pedido2_completado_con_pago'%}">Pedidos completados</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="{% url 'ubicanos'%}">Contacto</a>
+              </li>
+            </ul>
+
+          </div>
+        </div>
+      </div>
+    </nav>
+<font color="lightyellow">
+<h2>Crea una hamburguesae</h2>
+<h3>Crear Hamburguesa</h3>
+    <p>Estamos listos para empezar a crear sus hamburguesas. Puede elegir qué va a querer en su hamburguesa</p>
+<form type="checkbox" method="post">
+    {%csrf_token%}
+{{form.as_p}}
+    </br>
+    </br>
+    <button type="Submit">Crear Hamburguesa</button>
+</form>
+</br>
+</br>
+
+<button><td><a href='' >Borrar</a></td></button>
+ </br>
+</br>
+    <button><td><a href="{% url 'productos'%}" >Ver los costos</a></td></button>
+    <button><td><a href="{% url 'index3'%}" >Volver</a></td></button>
+
+</font>
+{%endblock cuerpo%}
